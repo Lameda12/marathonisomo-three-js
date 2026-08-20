@@ -18,6 +18,20 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+## Deploy (Vercel)
+
+The project is a zero-build static site with a `vercel.json` included.
+
+1. Go to [vercel.com/new](https://vercel.com/new) and import
+   `Lameda12/marathonisomo-three-js` from GitHub.
+2. Leave Framework Preset as **Other** — no build command, output directory is
+   the repo root.
+3. In **Project Settings → Git**, set the Production Branch to
+   `claude/threejs-marathon-race-game-wb0fnf` (or merge to `main` and use that).
+4. Deploy. Every push to the production branch auto-deploys.
+
+The site will be live at `https://<project-name>.vercel.app`.
+
 ## Controls
 
 | Input | Action |
