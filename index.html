@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Marathon Runner 3D</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./lib/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="hud">
+    <div id="topbar">
+      <div class="stat"><span class="label">TIME</span><span id="clock">00:00</span></div>
+      <div class="stat"><span class="label">DIST</span><span id="dist">0.0 km</span></div>
+      <div class="stat"><span class="label">SPEED</span><span id="pace">--</span></div>
+      <div class="stat"><span class="label">POS</span><span id="rank">-/-</span></div>
+    </div>
+    <div id="progresswrap">
+      <div id="progressbar"></div>
+      <div id="progressdots"></div>
+    </div>
+    <div id="staminawrap">
+      <span class="label">STAMINA</span>
+      <div id="staminabar"><div id="staminafill"></div></div>
+    </div>
+    <div id="toast"></div>
+  </div>
+
+  <div id="menu" class="overlay">
+    <h1>MARATHON RUNNER 3D</h1>
+    <p class="tagline">42.2 km. Eight runners. One finish line.</p>
+    <div class="controls">
+      <p><b>W / &uarr;</b> &mdash; run &nbsp;&nbsp; <b>SHIFT / SPACE</b> &mdash; sprint (drains stamina)</p>
+      <p><b>A / D</b> or <b>&larr; / &rarr;</b> &mdash; move sideways</p>
+      <p>Grab water at the aid tables on the roadside to refill stamina.</p>
+      <p>Run out of stamina and you'll <b>hit the wall</b> &mdash; pace yourself!</p>
+    </div>
+    <button id="startBtn">START RACE</button>
+  </div>
+
+  <div id="results" class="overlay hidden">
+    <h1 id="resultTitle">FINISHED!</h1>
+    <p id="resultPlace"></p>
+    <p id="resultTime"></p>
+    <div id="resultBoard"></div>
+    <button id="restartBtn">RACE AGAIN</button>
+  </div>
+
+  <div id="touch">
+    <button id="tLeft">&larr;</button>
+    <button id="tRun">RUN</button>
+    <button id="tSprint">SPRINT</button>
+    <button id="tRight">&rarr;</button>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
